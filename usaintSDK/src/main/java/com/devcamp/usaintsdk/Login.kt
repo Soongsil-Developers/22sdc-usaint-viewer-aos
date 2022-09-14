@@ -8,7 +8,7 @@ import javax.net.ssl.HttpsURLConnection
 
 
 class Login {
-    fun loginRequest(id: String, pwd:String) : Int{
+    fun loginRequest(id: String, pwd:String){
         val githubEndpoint = URL("http://15.165.194.15:8080/login/?id=$id&pwd=$pwd")
         val myConnection: HttpsURLConnection = githubEndpoint.openConnection() as HttpsURLConnection
 
@@ -21,10 +21,10 @@ class Login {
                 str = reader.readLine()
                 buffer.append(str)
 
-                val receiveMsg = buffer.toString();
-                Log.i("receiveMsg : ", receiveMsg);
+                val receiveMsg = buffer.toString()
+                Log.i("receiveMsg : ", receiveMsg)
 
-                reader.close();
+                reader.close()
             }
 
             
@@ -32,11 +32,11 @@ class Login {
 
 
         }else{ //연결 실패
-            return 400//연결오류
+            return //연결오류
         }
 
         myConnection.disconnect();
-        return 200//로그인 성공
+        return //로그인 성공
     }
 
 

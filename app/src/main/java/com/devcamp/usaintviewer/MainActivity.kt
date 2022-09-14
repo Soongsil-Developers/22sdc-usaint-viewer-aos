@@ -2,6 +2,7 @@ package com.devcamp.usaintviewer
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.devcamp.usaintsdk.Login
 import com.devcamp.usaintsdk.Test
 
 class MainActivity : AppCompatActivity() {
@@ -11,5 +12,10 @@ class MainActivity : AppCompatActivity() {
 
         val test = Test()
         test.showToast(this,"hello")
+
+
+        val login = Login()
+
+
     }
 }
