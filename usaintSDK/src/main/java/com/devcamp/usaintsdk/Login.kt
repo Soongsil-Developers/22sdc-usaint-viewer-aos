@@ -1,6 +1,8 @@
 package com.devcamp.usaintsdk
 
+import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.URL
@@ -8,10 +10,10 @@ import javax.net.ssl.HttpsURLConnection
 
 
 class Login {
-    fun loginRequest(id: String, pwd:String){
+    fun loginRequest(id: String, pwd:String):Int{
         val githubEndpoint = URL("http://15.165.194.15:8080/login/?id=$id&pwd=$pwd")
         val myConnection: HttpsURLConnection = githubEndpoint.openConnection() as HttpsURLConnection
-
+        Log.d("MainActivity","im login")
         if (myConnection.responseCode == 200) {//연결 성공
             var str: String = ""
             val tmp: InputStreamReader = InputStreamReader(myConnection.inputStream, "UTF-8")
@@ -27,17 +29,16 @@ class Login {
                 reader.close()
             }
 
-            
-
-
 
         }else{ //연결 실패
-            return //연결오류
+            return 400//연결오류
         }
 
         myConnection.disconnect();
-        return //로그인 성공
+        return 200//로그인 성공
     }
+
+
 
 
 }
