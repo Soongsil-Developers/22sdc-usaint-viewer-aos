@@ -2,13 +2,13 @@ package com.devcamp.usaintviewer
 
 import com.google.gson.annotations.SerializedName
 
-data class LoginReturn(
-    @SerializedName("userId")
+data class LoginInfo(
+    @SerializedName("status")
     val status: String,
 
-    @SerializedName("id")
+    @SerializedName("message")
     val message: String,
 
-    @SerializedName("body")
+    @SerializedName("data")
     val data: String
 )

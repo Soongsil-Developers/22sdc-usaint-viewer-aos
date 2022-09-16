@@ -6,9 +6,9 @@ import retrofit2.http.Path
 
 interface RetrofitService {
 
-    @GET("posts/1")
-    fun getUser(): Call<User>
+    @GET("login")
+    fun getUser(): Call<LoginInfo>
 
-    @GET("posts/{page}")
-    fun getUserPage(@Path("page") page: String): Call<User>
+    @GET("login/{page}")
+    fun getUserPage(@Path("page") page: String): Call<LoginInfo>
 }
